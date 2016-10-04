@@ -4,7 +4,7 @@ Feature: Creating Campaign - GFC
      I want to create a campaign in Config
      To test that all functions works
 
-Scenario Outline: Creating a Campaign in Config
+Scenario: Creating a Campaign in Config
      Given I am on Config
      When I enter my username
      And I enter my password
