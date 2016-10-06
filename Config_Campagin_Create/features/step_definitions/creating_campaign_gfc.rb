@@ -5,15 +5,19 @@ Given(/^I am on Config$/) do
 end
 
 When(/^I enter my username$/) do
-   @browser.text_area(:id => 'username').set('sshorey')
+   @browser.textarea(:id => 'username').set('sshorey')
 end
 
 When(/^I enter my password$/) do
-   @browser.text_area(:id => 'password').set('sshorey') 
+   @browser.textarea(:id => 'password').set('sshorey') 
 end
 
-When(/^I enter "([^"]*)" in the search bar$/) do |arg1|
-   @browser.text_area(:id => 'search').set('sierra') # Write code here that turns the phrase above into concrete actions
+When(/^I click submit to login$/) do
+   @browser.button(:type => 'submit').click # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I enter "([^"]*)" in the search bar$/) do |search|
+   @browser.input(:name => 'search').set('sierra') # Write code here that turns the phrase above into concrete actions
 end
 
 sleep 3
@@ -22,8 +26,8 @@ When(/^I click the search button$/) do
   @browser.button(:type => 'submit').click # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^I click "([^"]*)"$/) do |arg1|
-  @browser.button(:class => 'btn btn-sm btn-green glyphicon-plus').click # Write code here that turns the phrase above into concrete actions
+When(/^I click "([^"]*)"$/) do |new|
+  @browser.button(:class => 'btn btn-sm btn-green glyphicon-plus').click(new) # Write code here that turns the phrase above into concrete actions
 end
 
 When(/^I enter "([^"]*)" into the name field$/) do |arg1|

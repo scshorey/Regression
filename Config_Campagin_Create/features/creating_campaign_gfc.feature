@@ -8,6 +8,7 @@ Scenario: Creating a Campaign in Config
      Given I am on Config
      When I enter my username
      And I enter my password
+     And I click submit to login
      And I enter "Sierra" in the search bar
      And I click the search button
      And I click "+New"
