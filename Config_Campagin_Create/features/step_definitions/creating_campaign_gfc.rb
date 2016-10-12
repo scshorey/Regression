@@ -1,33 +1,36 @@
 # You can implement step definitions for undefined steps with these snippets:
 
 Given(/^I am on Config$/) do
-@browser.goto "https://config.consumertrack.com"
+  @browser.goto "https://config.consumertrack.com"
 end
 
 When(/^I enter my username$/) do
-   @browser.textarea(:id => 'username').set('sshorey')
+  # binding.pry
+  @browser.textarea(:id => 'username').when_present.set('sshorey')
 end
 
 When(/^I enter my password$/) do
-   @browser.textarea(:id => 'password').set('sshorey') 
+  @browser.textarea(:id => 'password').set('sshorey') 
 end
 
 When(/^I click submit to login$/) do
-   @browser.button(:type => 'submit').click # Write code here that turns the phrase above into concrete actions
+  @browser.button(:type => 'submit').click 
 end
 
-When(/^I enter "([^"]*)" in the search bar$/) do |search|
-   @browser.input(:name => 'search').set('sierra') # Write code here that turns the phrase above into concrete actions
+When(/^I enter "([^"]*)" in the search bar$/) do |sierra|
+  @browser.text_field(:placeholder => 'Search').when_present.set(sierra) # Write code here that turns the phrase above into concrete actions
 end
 
 sleep 3
 
 When(/^I click the search button$/) do
-  @browser.button(:type => 'submit').click # Write code here that turns the phrase above into concrete actions
+  @browser.send_keys :return
+ #@browser.button(:type => 'submit').when_present.click # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^I click "([^"]*)"$/) do |new|
-  @browser.button(:class => 'btn btn-sm btn-green glyphicon-plus').click(new) # Write code here that turns the phrase above into concrete actions
+When(/^I click "([^"]*)"$/) do |name|
+  #@browser.send_keys :return
+   @browser.link(:href => "https://config.consumertrack.com/campaigns/create?company=301").when_present.click
 end
 
 When(/^I enter "([^"]*)" into the name field$/) do |arg1|

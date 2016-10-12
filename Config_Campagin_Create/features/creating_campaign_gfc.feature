@@ -11,7 +11,7 @@ Scenario: Creating a Campaign in Config
      And I click submit to login
      And I enter "Sierra" in the search bar
      And I click the search button
-     And I click "+New"
+     And I click "Sierra's Best Testing Co"
      And I enter "SBTC - Regression Test Date" into the name field
      And I select "creditscore" from the Vertical drop down
      And I select "TU Primary OT Secondary" from the Offer drop down
